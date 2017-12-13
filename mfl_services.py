@@ -62,9 +62,9 @@ class mfl_service:
         :param league_id: league id to gather trade data from
         :return: list of all trades in league
         '''
+        trade_url = "http://www55.myfantasyleague.com/" + str(year) + "/export?TYPE=transactions&L=" \
+                    + str(league_id) + "&TRANS_TYPE=TRADE&JSON=1"
         try:
-            trade_url = "http://www55.myfantasyleague.com/" + str(year) + "/export?TYPE=transactions&L="\
-                        + league_id + "&TRANS_TYPE=TRADE&JSON=1"
             page = requests.get(trade_url)
             page.raise_for_status()
 
